@@ -1,12 +1,9 @@
-
-import { Cause, Stat } from './types';
-
-export const CAUSES: Cause[] = [
+export const CAUSES = [
   {
     id: '1',
     title: 'Clean Water Initiative',
     description: 'Building sustainable solar-powered wells for remote villages in sub-Saharan Africa.',
-    imageUrl: 'https://images.unsplash.com/photo-1541810270634-fce54094e19b?q=80&w=800&auto=format&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1541810270634-fce540993131?q=80&w=800&auto=format&fit=crop',
     raised: 45000,
     goal: 60000,
     category: 'Environment'
@@ -31,7 +28,7 @@ export const CAUSES: Cause[] = [
   }
 ];
 
-export const IMPACT_STATS: Stat[] = [
+export const IMPACT_STATS = [
   { label: 'Lives Changed', value: '120,000+', icon: '👥' },
   { label: 'Trees Planted', value: '500k', icon: '🌳' },
   { label: 'Wells Built', value: '850', icon: '💧' },
