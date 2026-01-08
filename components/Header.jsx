@@ -1,11 +1,6 @@
-
 import React from 'react';
 
-interface HeaderProps {
-  onDonateClick: () => void;
-}
-
-const Header: React.FC<HeaderProps> = ({ onDonateClick }) => {
+const Header = ({ onDonateClick }) => {
   return (
     <header className="sticky top-0 z-40 w-full bg-white/80 backdrop-blur-md border-b border-slate-100">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
