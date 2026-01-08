@@ -1,23 +1,22 @@
-
 import React, { useState } from 'react';
-import { GoogleGenAI, Type } from "@google/genai";
+import { GoogleGenAI } from "@google/genai";
 
-const DonationForm: React.FC = () => {
-  const [selectedAmount, setSelectedAmount] = useState<number | null>(25);
-  const [customAmount, setCustomAmount] = useState<string>('');
+const DonationForm = () => {
+  const [selectedAmount, setSelectedAmount] = useState(25);
+  const [customAmount, setCustomAmount] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [aiInsight, setAiInsight] = useState<string>('');
+  const [aiInsight, setAiInsight] = useState('');
 
   const amounts = [10, 25, 50, 100, 250];
 
-  const handleAmountSelect = (val: number) => {
+  const handleAmountSelect = (val) => {
     setSelectedAmount(val);
     setCustomAmount('');
     generateImpactInsight(val);
   };
 
-  const handleCustomChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCustomChange = (e) => {
     const val = e.target.value;
     setCustomAmount(val);
     setSelectedAmount(null);
@@ -27,7 +26,7 @@ const DonationForm: React.FC = () => {
   };
 
   // Fun integration of Gemini to provide personalized impact descriptions
-  const generateImpactInsight = async (amount: number) => {
+  const generateImpactInsight = async (amount) => {
     try {
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       const response = await ai.models.generateContent({
@@ -40,7 +39,7 @@ const DonationForm: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     // Simulate API call
