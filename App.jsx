@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Header from './components/Header';
 import MissionHero from './components/MissionHero';
@@ -7,7 +6,7 @@ import CauseCards from './components/CauseCards';
 import DonationForm from './components/DonationForm';
 import Footer from './components/Footer';
 
-const App: React.FC = () => {
+const App = () => {
   const [isDonationModalOpen, setIsDonationModalOpen] = useState(false);
 
   const toggleDonationModal = () => setIsDonationModalOpen(prev => !prev);
@@ -54,7 +53,6 @@ const App: React.FC = () => {
 
       <Footer />
 
-      {/* Modal Overlay for Global CTA */}
       {isDonationModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
           <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-xl p-8 max-h-[90vh] overflow-y-auto">
