@@ -1,11 +1,6 @@
-
 import React from 'react';
 
-interface MissionHeroProps {
-  onDonateClick: () => void;
-}
-
-const MissionHero: React.FC<MissionHeroProps> = ({ onDonateClick }) => {
+const MissionHero = ({ onDonateClick }) => {
   return (
     <section className="relative overflow-hidden bg-white py-24 md:py-32">
       <div className="container mx-auto px-4 relative z-10">
